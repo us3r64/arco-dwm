@@ -63,6 +63,11 @@ arcolinux-logout-git
 dmenu
 sxhkd
 feh
+zsh
+zsh-completions
+zsh-syntax-highlighting
+arcolinux-zsh-git
+yay -S oh-my-zsh-git
 )
 
 count=0
@@ -87,6 +92,12 @@ echo "Enabling lightdm as display manager"
 echo "################################################################"
 echo;tput sgr0
 sudo systemctl enable lightdm.service -f
+
+tput setaf 5;echo "################################################################"
+echo "Switching to Zsh"
+echo "################################################################"
+echo;tput sgr0
+sudo chsh $USER -s /bin/zsh
 
 tput setaf 7;echo "################################################################"
 echo "You now have a very minimal functional desktop"
